@@ -64,27 +64,34 @@ function displayPets(pets) {
     const petList = document.querySelector("#pet-list");
     petList.innerHTML = "";
 
-    for (let pet of pets) {
-        const name = pet.name;
-        const breed = pet.breeds.primary || "Breed unknown";
-        const photo =
-            pet.photos[0]?.medium || "https://via.placeholder.com/300x200?text=No+Image";
-        const color = pet.colors.primary || "Color unknown";
-        const description = pet.description;
+    if (pets.length === 0) {
+        petList.textContent = "No pets found matching your search.";
+    } else {
+        for (let pet of pets) {
+            const name = pet.name;
+            const breed = pet.breeds.primary || "Breed unknown";
+            const photo =
+                pet.photos[0]?.medium || "https://via.placeholder.com/300x200?text=No+Image";
+            const color = pet.colors.primary || "Color unknown";
+            const description = pet.description;
 
-        const card = document.createElement("div");
-        card.classList.add("pet-card");
+            const card = document.createElement("div");
+            card.classList.add("pet-card");
 
-        card.innerHTML = `
-            <img src="${photo}" alt="Photo of a ${breed}">
-            <div class="info">
-                <h3>${name}</h3>
-                <p>${breed}</p>
-                <p>${color}</p>
-                <p>${decodeHTML(description)}</p>
-            </div>
-        `;
+            card.innerHTML = `
+                <img src="${photo}" alt="Photo of a ${breed}">
+                <div class="info">
+                    <h3>${name}</h3>
+                    <p>${breed}</p>
+                    <p>${color}</p>
+                    <p>${decodeHTML(description)}</p>
+                </div>
+            `;
 
-        petList.appendChild(card);
+            petList.appendChild(card);
+        }
     }
+
+    // Move focus to results so screen readers announce new content
+    petList.focus();
 }
