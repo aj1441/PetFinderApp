@@ -1,5 +1,12 @@
 const form = document.querySelector("#pet-form");
 
+window.addEventListener("DOMContentLoaded", () => {
+    const desc = document.querySelector("#page-description");
+    if (desc) {
+        desc.focus();
+    }
+});
+
 form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
