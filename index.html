@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Pet Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <section class="hero">
+    <h1>Let's find your perfect pet!</h1>
+  </section>
+  <main id="main-content">
+    <form id="pet-form" aria-label="Pet Search Form">
+      <div class="form-group">
+        <label for="name">Name: <span class="required-asterisk" aria-hidden="true">*</span></label>
+        <input id="name" name="name" type="text" required aria-label="Your name" aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="email">Email: <span class="required-asterisk" aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" required aria-label="Your email address" aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip Code: <span class="required-asterisk" aria-hidden="true">*</span></label>
+        <input id="zip" name="zip" type="text" required aria-label="Your zip code" aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="pet-type">Type of Pet: <span class="required-asterisk" aria-hidden="true">*</span></label>
+        <select id="pet-type" name="petType" required aria-label="Select the type of pet you are looking for" aria-required="true">
+          <option value="">-- Select One --</option>
+          <option value="cat">Cat</option>
+          <option value="dog">Dog</option>
+          <option value="bird">Bird</option>
+          <option value="rabbit">Rabbit</option>
+        </select>
+      </div>
+      <!--
+      <div class="form-group">
+        <label for="color">Preferred Color:</label>
+        <select id="color" name="color" aria-label="Select preferred pet color">
+          <option value="">-- Any Color --</option>
+          <option value="Mixed">Mixed</option>
+          <option value="Black">Black</option>
+          <option value="White">White</option>
+          <option value="Brown">Brown</option>
+          <option value="Orange">Orange</option>
+        </select>
+      </div>
+      -->
+      <button type="submit">Submit</button>
+    </form>
+    <section id="pet-list" class="pet-list" aria-live="polite"></section>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
