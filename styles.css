@@ -1,0 +1,139 @@
+/* Global style */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #d1f2eb, #0e287c);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 1em;
+  background: #0e287c;
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 0.25em;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 3em;
+  font-size: 2em;
+}
+
+/* Form styles */
+form {
+  max-width: 500px;
+  margin: 3em auto;
+  padding: 4em;
+  background: #ffffffcc;
+  border-radius: 1em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: #2e4053;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75em;
+  border: 2px solid #ccd1d1;
+  border-radius: 0.5em;
+  font-size: 1em;
+  background-color: #fefefe;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #f1948a;
+  outline: none;
+}
+
+button {
+  background-color: #0e287c;
+  color: white;
+  padding: 0.75em 1.5em;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ec7063;
+}
+
+/* Pet list section */
+#pet-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2em;
+  padding: 3em;
+}
+
+/* Pet cards */
+.pet-card {
+  background-color: white;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pet-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.pet-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid #f1948a;
+}
+
+.pet-card .info {
+  padding: 1.2em;
+}
+
+.pet-card h3 {
+  margin: 0 0 0.4em;
+  color: #1a5276;
+  font-size: 1.3em;
+}
+
+.pet-card p {
+  margin: 0.3em 0;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.required-asterisk {
+  color: red;
+  margin-left: 0.25rem;
+  font-weight: bold;
+}
