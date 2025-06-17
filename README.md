@@ -46,6 +46,41 @@ heading is a white card containing the form:
 3. In your terminal, run `git clone <repo-url>` replacing `<repo-url>` with the address you copied.
 4. Change into the new project directory: `cd ajs-portfolio`.
 
+## JavaScript Starter Code
+
+```javascript
+function getToken() {
+  return fetch("https://api.petfinder.com/v2/oauth2/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: new URLSearchParams({
+      grant_type: "client_credentials",
+      client_id: "ADD HERE",
+      client_secret: "ADD HERE"
+    })
+  })
+    .then((res) => res.json())
+    .then((data) => data.access_token);
+}
+
+function getAdoptablePets(formData) {
+  // First need to call the getToken function. Once that value is returned, 
+  // you can use the token in the API call. 
+  // They will have to research how to build their link.
+  getToken().then((token) => {
+    fetch(`ADD URL`, {
+      // Note the token is being used in the header, which they will learn more about in backend.
+      headers: {
+        Authorization: `Bearer ${token}` // <-- add space after 'Bearer'
+      }
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  });
+}
+
 ## Making Changes
 
 1. Create or edit files as needed. For example, update `pet-finder/index.html` or `pet-finder/styles.css`.
